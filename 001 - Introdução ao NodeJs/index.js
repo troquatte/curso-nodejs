@@ -15,6 +15,4 @@ const server = http.createServer((req, res) => {
   return res.end(JSON.stringify({ status: 404, body: "404 (Not Found)" }));
 });
 
-server.listen(3000, () => {
-  console.log("Server on");
-});
+server.listen(3000);

@@ -5,15 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:dev:js": "node --watch index.js",
-    "start:dev:ts": "npx tsx watch index.ts",
-    "build:dev": "npx tsc --build tsconfig.json"
+    "start:dev:js": "node --watch index.js"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^18.15.5",
-    "tsx": "^3.12.6",
-    "typescript": "^5.0.2"
-  }
+  "license": "ISC"
 }
