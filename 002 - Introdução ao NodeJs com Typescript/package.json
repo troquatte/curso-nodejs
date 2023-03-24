@@ -1,0 +1,19 @@
+{
+  "name": "curso-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:dev": "npx tsx watch ./src/index.ts",
+    "start": "node ./dist/index.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.6",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.2"
+  }
+}
