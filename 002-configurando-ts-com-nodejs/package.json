@@ -1,0 +1,20 @@
+{
+  "name": "002-configurando-ts-com-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "npx tsx watch ./src/index.ts",
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "prettier": "prettier --write ./src/**/*.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.1.1",
+    "prettier": "^2.8.8",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  }
+}
