@@ -1,11 +1,11 @@
 {
-  "name": "curso-nodejs",
+  "name": "001---introducaoao-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:dev:js": "node --watch index.js"
+    "start": "node --watch index.js"
   },
   "author": "",
   "license": "ISC"
