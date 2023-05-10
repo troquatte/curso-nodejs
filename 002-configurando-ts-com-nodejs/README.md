@@ -5,29 +5,29 @@
 <p>É muito simples de utilizar, basta clonar o projeto e instalar as dependências:</p>
 
 ```javascript
-  // Install 
+  // Install
     npm i
 
-  // Run Dev 
+  // Run Dev
     npm run start:dev
 
-  // Run Build 
+  // Run Build
     npm run build
 
-  // Run Prod 
+  // Run Prod
     npm run start
 
-  // Run Prettier 
+  // Run Prettier
     npm run prettier
 
-  // Run Eslint 
+  // Run Eslint
     npm run eslint
 
-  // Run Jest ( test ) 
-    npm run jest
+  // Run Jest ( test )
+    npm run test
 
-  // Run Jest ( test CI ) 
-    npm run jest:ci
+  // Run Jest ( test CI )
+    npm run test:ci
 ```
 
 ---
@@ -53,6 +53,7 @@
   // Typescript
   npm i -D typescript @types/node tsx
 ```
+
 ---
 
 <h2>
@@ -70,6 +71,7 @@
   // Prettier
   npm i -D prettier
 ```
+
 ---
 
 <h2>
@@ -85,10 +87,11 @@ Ele é projetado para ajudar os desenvolvedores a identificar e corrigir problem
 
 ```javascript
   // Eslint
-  npm i -D eslint 
-  npm i -D eslint-config-prettier eslint-plugin-prettier eslint-plugin-import 
-  npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser 
+  npm i -D eslint
+  npm i -D eslint-config-prettier eslint-plugin-prettier eslint-plugin-import
+  npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
+
 ---
 
 <h2>
@@ -104,9 +107,10 @@ Ele foi desenvolvido para ser fácil de configurar e usar, fornecendo uma ampla 
 
 ```javascript
   // Jest
-  npm i -D jest ts-jest @types/jest 
+  npm i -D jest ts-jest @types/jest
   npx ts-jest config:init
 ```
+
 ---
 
 Por ♥ Dener Troquatte :wave: [Linkedin!](https://www.linkedin.com/in/dener-s%C3%A3o-pedro-troquatte-ababa079/) | [Blog!](https://vidafullstack.com.br/)
