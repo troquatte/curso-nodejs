@@ -1,3 +1,3 @@
-const data = 'Dener Troquatte';
+export const data = 'Dener Troquatte';
 
 console.log(data);

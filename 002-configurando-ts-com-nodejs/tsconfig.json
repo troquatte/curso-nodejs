@@ -4,7 +4,7 @@
     "module": "CommonJS" /* Specify what module code is generated. */,
     "moduleResolution": "nodenext" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
-    "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
+    "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
     "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
     "sourceMap": true /* Create source map files for emitted JavaScript files. */,
@@ -12,6 +12,6 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
