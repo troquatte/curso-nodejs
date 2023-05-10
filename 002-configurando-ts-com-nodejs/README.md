@@ -4,47 +4,31 @@
 <p>Desenvolvido para ajudar outros devs na agilidade de seu código Typescript / NodeJs.</p>
 <p>É muito simples de utilizar, basta clonar o projeto e instalar as dependências:</p>
 
-<code>
-  <p>
-    // Install  <br />
+```javascript
+  // Install 
     npm i
-  </p>
 
-  <p>
-    // Run Dev <br />
+  // Run Dev 
     npm run start:dev
-  </p>
 
-  <p>
-    // Run Build <br />
+  // Run Build 
     npm run build
-  </p>
 
-  <p>
-    // Run Prod <br />
+  // Run Prod 
     npm run start
-  </p>
 
-  <p>
-    // Run Prettier <br />
+  // Run Prettier 
     npm run prettier
-  </p>
 
-  <p>
-    // Run Eslint <br />
+  // Run Eslint 
     npm run eslint
-  </p>
 
-  <p>
-    // Run Jest ( test ) <br />
+  // Run Jest ( test ) 
     npm run jest
-  </p>
 
-  <p>
-    // Run Jest ( test CI ) <br />
+  // Run Jest ( test CI ) 
     npm run jest:ci
-  </p>
-</code>
+```
 
 ---
 
@@ -65,6 +49,10 @@
 </h2>
 <p>Foi desenvolvido uma aplicação NodeJs utilizando Typescript como base.</p>
 
+```javascript
+  // Typescript
+  npm i -D typescript @types/node tsx
+```
 ---
 
 <h2>
@@ -78,6 +66,10 @@
   Ele é amplamente utilizado em várias linguagens de programação/marcadores, incluindo JavaScript, TypeScript, CSS, HTML, JSON e muito mais.
 </p>
 
+```javascript
+  // Prettier
+  npm i -D prettier
+```
 ---
 
 <h2>
@@ -91,6 +83,12 @@ O ESLint é uma ferramenta de análise de código estática amplamente utilizada
 Ele é projetado para ajudar os desenvolvedores a identificar e corrigir problemas de qualidade, erros de sintaxe e padrões de código inconsistentes em projetos JavaScript e TypeScript.
 </p>
 
+```javascript
+  // Eslint
+  npm i -D eslint 
+  npm i -D eslint-config-prettier eslint-plugin-prettier eslint-plugin-import 
+  npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser 
+```
 ---
 
 <h2>
@@ -104,6 +102,11 @@ O Jest é um framework de testes de JavaScript amplamente utilizado para testar 
 Ele foi desenvolvido para ser fácil de configurar e usar, fornecendo uma ampla gama de recursos para escrever testes automatizados.
 </p>
 
+```javascript
+  // Jest
+  npm i -D jest ts-jest @types/jest 
+  npx ts-jest config:init
+```
 ---
 
 Por ♥ Dener Troquatte :wave: [Linkedin!](https://www.linkedin.com/in/dener-s%C3%A3o-pedro-troquatte-ababa079/) | [Blog!](https://vidafullstack.com.br/)
