@@ -14,7 +14,6 @@ model User {
   id        String   @id @default(uuid())
   email     String   @unique
   name      String?
-  age       Int?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
