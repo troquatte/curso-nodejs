@@ -25,6 +25,7 @@ const baseUrl = '/user';
  * Exemplo: DELETE /api/users/1 - Exclui o usuário com ID 1 do sistema.
  */
 
+router.post(`${baseUrl}/create`, userController.create);
 router.get(`${baseUrl}/read`, userController.read);
 
 export const userRouter = router;
