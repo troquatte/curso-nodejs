@@ -5,6 +5,13 @@ import { userController } from './controller/user-controller';
 const router = Router();
 const baseUrl = '/user';
 
+router.post(`${baseUrl}`, userController.create);
+router.get(`${baseUrl}/:id`, userController.read);
+router.patch(`${baseUrl}/:id`, userController.update);
+router.delete(`${baseUrl}/:id`, userController.delete);
+
+export const userRouter = router;
+
 /**
  * GET: É usado para recuperar dados de um recurso existente no servidor.
  * Exemplo: GET /api/users - Recupera todos os usuários do sistema.
@@ -24,8 +31,3 @@ const baseUrl = '/user';
  * DELETE: É usado para excluir um recurso existente no servidor.
  * Exemplo: DELETE /api/users/1 - Exclui o usuário com ID 1 do sistema.
  */
-
-router.post(`${baseUrl}/create`, userController.create);
-router.get(`${baseUrl}/read`, userController.read);
-
-export const userRouter = router;

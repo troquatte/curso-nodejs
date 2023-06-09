@@ -1,26 +1,125 @@
 import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { z } from 'zod';
+
+// Service
+import { userService } from '../service/user-service';
+
+// Enum
+import { EZod } from 'enum/zod.enum';
+import { ECrud } from 'enum/crud.enum';
 
 class UserController {
   public async create(req: Request, res: Response) {
-    const prisma = new PrismaClient();
+    const { name, email, password } = req.body;
 
-    await prisma.user.create({
-      data: {
-        email: 'dener@vidafullstack.com.br',
-        name: 'Dener Troquatte',
-      },
-    });
+    try {
+      const ZUserSchema = z.object({
+        name: z.string().optional(),
+        email: z.string().email({ message: `Email ${EZod.REQUIRED}` }),
+        password: z.string().min(8, { message: `Senha ${EZod.REQUIRED}` }),
+      });
+      ZUserSchema.parse({ name, email, password });
+    } catch (err: any) {
+      return res.status(400).json({
+        message: EZod.INVALID_DATA,
+        error: err.errors,
+      });
+    }
 
-    return res.json({
-      data: 'Criado com sucesso!',
-    });
+    try {
+      return res.json({
+        message: ECrud.CREATE,
+        data: await userService.create(name, email, password),
+      });
+    } catch (err: any) {
+      return res.status(409).json({
+        message: err.message,
+      });
+    }
   }
 
-  public read(req: Request, res: Response) {
-    return res.json({
-      data: 'Hello World!',
-    });
+  public async read(req: Request, res: Response) {
+    const paramsId = req.params.id;
+
+    try {
+      const ZUserSchema = z
+        .string()
+        .min(30, { message: `ID ${EZod.REQUIRED}` });
+      ZUserSchema.parse(paramsId);
+    } catch (err: any) {
+      return res.status(400).json({
+        message: EZod.INVALID_DATA,
+        error: err.errors,
+      });
+    }
+
+    try {
+      return res.json({
+        message: ECrud.READ,
+        data: await userService.read(paramsId),
+      });
+    } catch (err: any) {
+      return res.status(404).json({
+        error: err.message,
+      });
+    }
+  }
+
+  public async update(req: Request, res: Response) {
+    const paramsId = req.params.id;
+    const { name } = req.body;
+
+    try {
+      const ZUserSchema = z.object({
+        paramsId: z.string().min(30, { message: `ID ${EZod.REQUIRED}` }),
+        name: z.string().min(1, { message: `Nome ${EZod.REQUIRED}` }),
+      });
+      ZUserSchema.parse({ paramsId, name });
+    } catch (err: any) {
+      return res.status(400).json({
+        message: EZod.INVALID_DATA,
+        error: err.errors,
+      });
+    }
+
+    try {
+      return res.json({
+        message: ECrud.UPDATE,
+        data: await userService.update(paramsId, name),
+      });
+    } catch (err: any) {
+      return res.status(404).json({
+        error: err.message,
+      });
+    }
+  }
+
+  public async delete(req: Request, res: Response) {
+    const paramsId = req.params.id;
+
+    try {
+      const ZUserSchema = z
+        .string()
+        .min(30, { message: `ID ${EZod.REQUIRED}` });
+      ZUserSchema.parse(paramsId);
+    } catch (err: any) {
+      return res.status(400).json({
+        message: EZod.INVALID_DATA,
+        error: err.errors,
+      });
+    }
+
+    try {
+      await userService.delete(paramsId);
+
+      return res.json({
+        message: ECrud.DELETE,
+      });
+    } catch (err: any) {
+      return res.status(404).json({
+        error: err.message,
+      });
+    }
   }
 }
 
