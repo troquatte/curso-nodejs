@@ -1,30 +1,30 @@
 ```
 > Feature User
--- Model user ( nome, email, password, data de criação, data de alteração ) - OK
+-- Model user ( nome, email, password, data de criação, data de alteração )
 
 -- Crud user
 
 -- Create
---- Nome ( opcional ), Email e password devem ser obrigatórios - OK
---- Id deve ser criado com uuid - OK
---- Os usuários devem conter emails únicos - OK
---- Password deve ser encriptado - OK
---- Assim que o usuário for criado, deve ser criada uma pasta com id dele - OK
----- Iremos armazenar todos seus arquivos - OK
----- assets/files/:id - OK
+--- Nome ( opcional ), Email e password devem ser obrigatórios
+--- Id deve ser criado com uuid
+--- Os usuários devem conter emails únicos
+--- Password deve ser encriptado
+--- Assim que o usuário for criado, deve ser criada uma pasta com id dele
+---- Iremos armazenar todos seus arquivos
+---- assets/files/:id
 
 -- Read
---- Uuid é obrigatório para efetuar a leitura - OK
---- Leitura do usuário deve ser feita pelo uuid - OK
---- Não teremos o read all ou list all - OK
+--- Uuid é obrigatório para efetuar a leitura
+--- Leitura do usuário deve ser feita pelo uuid
+--- Não teremos o read all ou list all
 
 --- Débitos Técnicos
 --- Autorização: só pode acessar a rota Logado
 --- Não pode ler outro usuário
 
 -- Update
---- Uuid é obrigatório para efetuar a edição - OK
---- A edição é somente para o name - OK
+--- Uuid é obrigatório para efetuar a edição
+--- A edição é somente para o name
 
 --- Débitos Técnicos
 --- Autorização: só pode acessar a rota Logado
