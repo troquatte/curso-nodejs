@@ -1,19 +1,16 @@
 import { Router } from 'express';
-import { userController } from './controller/user-controller';
-import { MiddlewareAuth } from 'middleware/auth-middleware';
+
+// Controller
+import { authController } from './controller/auth-controller';
 
 // Router
 const router = Router();
-const baseUrl = '/user';
+const baseUrl = '/auth';
 
-router.post(`${baseUrl}`, userController.create);
+router.post(`${baseUrl}/login`, authController.login);
+router.post(`${baseUrl}/token`, authController.token);
 
-router.use(`${baseUrl}/:id`, MiddlewareAuth.authenticate);
-router.get(`${baseUrl}/:id`, userController.read);
-router.patch(`${baseUrl}/:id`, userController.update);
-router.delete(`${baseUrl}/:id`, userController.delete);
-
-export const userRouter = router;
+export const authRouter = router;
 
 /**
  * GET: É usado para recuperar dados de um recurso existente no servidor.
