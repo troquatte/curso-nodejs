@@ -68,7 +68,7 @@ class UserClientController {
   public async listAll(req: Request, res: Response) {
     const tokenUserId = req.tokenUserId;
     let page = Number(req.query.page);
-    let search = req.query.search ? String(req.query.search) : undefined;
+    const search = req.query.search ? String(req.query.search) : undefined;
 
     if (!page || page <= 0 || isNaN(page)) {
       page = 1;

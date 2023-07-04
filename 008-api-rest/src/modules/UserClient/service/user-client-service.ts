@@ -59,7 +59,6 @@ class UserClientService {
   ) {
     const pageSize = 11;
     const skip = (page - 1) * pageSize;
-
     let findUser;
 
     if (!search) {
