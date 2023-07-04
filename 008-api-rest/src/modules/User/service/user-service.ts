@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import { prismaConnect } from 'prismaConn';
 
 // Utils
-import { UtilsFileUser } from '../utils/file-utils';
+import { UtilsFileUser } from 'utils/file-utils';
 
 // Enum
 import { EStatusErrors } from 'enum/status-errors.enum';
