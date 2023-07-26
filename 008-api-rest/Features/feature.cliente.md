@@ -1,36 +1,36 @@
 ```
 > Feature Cliente
--- Model cliente ( name* , email, phone, data de criação, data de alteração ) - OK
+-- Model cliente ( name* , email, phone, data de criação, data de alteração )
 
 -- Crud Cliente
 
--- Create - OK
---- Nome ( obrigatório ), Email e telefone devem ser opcional; - OK
---- Id deve ser criado com uuid - OK
---- Assim que o Cliente for criado, deve ser criada uma pasta com id dele dentro - OK
+-- Create
+--- Nome ( obrigatório ), Email e telefone devem ser opcional;
+--- Id deve ser criado com uuid
+--- Assim que o Cliente for criado, deve ser criada uma pasta com id dele dentro
     da pasta do id do usuário
----- Iremos armazenar todos seus arquivos dentro da pasta - OK
----- assets/files/:userId/:clientId - OK
+---- Iremos armazenar todos seus arquivos dentro da pasta
+---- assets/files/:userId/:clientId
 
 -- Read
---- Uuid é obrigatório para efetuar a leitura - OK
---- Leitura do Cliente deve ser feita pelo uuid - OK
+--- Uuid é obrigatório para efetuar a leitura
+--- Leitura do Cliente deve ser feita pelo uuid
 
 -- List all
---- Devemos listar todos os clientes do nosso usuário - OK
---- Deve conter paginação depois de 11 clientes - OK
+--- Devemos listar todos os clientes do nosso usuário
+--- Deve conter paginação depois de 11 clientes
 --- Busca de clientes
 
 -- Update
---- Uuid é obrigatório para efetuar a edição - OK
---- Nome ( obrigatório ), Email e telefone devem ser opcional - OK
+--- Uuid é obrigatório para efetuar a edição
+--- Nome ( obrigatório ), Email e telefone devem ser opcional
 
 -- Delete
 --- Todos os dados deste cliente do usuário devem ser deletados, como:
----- Arquivos - OK
----- Dados no banco - OK
----- Tudo relacionado ao cliente do usuário - OK
----- OBS.: Caso você utilize esta ferramenta para venda, leia mais sobre LGPD - OK
+---- Arquivos
+---- Dados no banco
+---- Tudo relacionado ao cliente do usuário
+---- OBS.: Caso você utilize esta ferramenta para venda, leia mais sobre LGPD
 
 ---- IMPORTANTE: Definition of done
 --- Autorização: só pode acessar a rota Logado
