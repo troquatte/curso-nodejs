@@ -82,7 +82,29 @@ class UserClientFilesService {
       throw new Error(EStatusErrors.E404);
     }
 
-    return findAll;
+    let monthRecords: Array<number> = [];
+    let monthCounts: any = {};
+
+    findAll.forEach((record) => {
+      const month = record.date.getMonth();
+      monthRecords.push(month);
+    });
+
+    monthRecords.forEach((month) => {
+      if (monthCounts[month]) {
+        return monthCounts[month]++;
+      }
+      return (monthCounts[month] = 1);
+    });
+
+    const count = Object.entries(monthCounts).map(([month, total]) => {
+      return {
+        month: Number(month) + 1,
+        total,
+      };
+    });
+
+    return { count, results: findAll };
   }
 
   public async update(

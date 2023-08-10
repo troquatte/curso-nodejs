@@ -43,13 +43,46 @@ class UserClientService {
         id: paramsId,
         userId: tokenUserId,
       },
+      include: {
+        userClientFiles: {
+          select: {
+            date: true,
+          },
+        },
+      },
     });
 
     if (!findUserClient) {
       throw new Error(EStatusErrors.E404);
     }
 
-    return findUserClient;
+    let yearRecords: Array<number> = [];
+    let yearCouts: any = {};
+
+    findUserClient.userClientFiles.forEach((record) => {
+      const year = record.date.getFullYear();
+      yearRecords.push(year);
+    });
+
+    yearRecords.forEach((year) => {
+      if (yearCouts[year]) {
+        return yearCouts[year]++;
+      }
+
+      yearCouts[year] = 1;
+    });
+
+    const userClientParse = JSON.parse(JSON.stringify(findUserClient));
+    delete userClientParse.userClientFiles;
+
+    const count = Object.entries(yearCouts).map(([year, total]) => {
+      return {
+        year,
+        total,
+      };
+    });
+
+    return { ...userClientParse, count };
   }
 
   public async listAll(
